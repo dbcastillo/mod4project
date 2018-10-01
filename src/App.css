@@ -1,0 +1,100 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}/* CSS reset to get rid of empty space at top of page */
+
+.App {
+  text-align: center;
+  background-image: url(https://preview.ibb.co/dRxzOe/alcohol_architecture_bar_260922.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  background-color: hsla(10,100%,100%,0.20);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+}
+
+.Body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 3em;
+} /* This allows 2 divs to be side by side */
+
+.App-title {
+  font-size: 4em;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.drink {
+  width: 150px;
+}
+
+.face {
+  width: 150px;
+}
+
+.h4 {
+  color: black;
+}
+
+#profile{
+  font-size: 1.6em;
+}
+
+.form-div{
+  padding-bottom: 1em;
+  color: white;
+  outline: #ffff00 dotted thick;
+  max-height: 170px;
+}
+
+#drink-container {
+  width: auto;
+  margin: 9px auto;
+  float: left;
+  width: 400px;
+}
+
+#single-drink {
+  width: 300px;
+}
+
+#click{
+  font-size: 50px;
+}
+
+#drink-name{
+  font-size: 20px;
+  color: white;
+}
+#face-container {
+  width: auto;
+  margin: 9px auto;
+  float: right;
+  width: 15px;
+}
+
+#single-face {
+  width: 100px;
+}
+
+#face-name{
+  font-size: 20px;
+  color: white;
+}
+
+#face-button{
+  width: 150px;
+}
