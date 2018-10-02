@@ -2,7 +2,6 @@ import React from 'react'
 
 class DrinkForm extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div className="form-div">
       <br></br>
@@ -10,7 +9,7 @@ class DrinkForm extends React.Component {
       <hr></hr>
       <hr></hr>
       <br></br>
-      <h2 id='profile'>Create Flat-Lounge Profile</h2>
+      <h2 id='profile'>Create Profile:</h2>
       <br></br>
       <form onSubmit={this.props.handleSubmit} className='drink-form'>
       <input
@@ -18,7 +17,7 @@ class DrinkForm extends React.Component {
         value={this.props.nameInput}
         name="nameInput"
         onChange={this.props.handleNameChange}
-        placeholder="Enter name here:">
+        placeholder="ENTER NAME HERE:">
       </input>
       <br></br>
       <br></br>
@@ -52,7 +51,7 @@ class DrinkForm extends React.Component {
           name="descriptionInput"
           value={this.props.descriptionInput}
           onChange={this.props.handleDescriptionChange}
-          placeholder="Describe your emotion:">
+          placeholder="DESCRIBE EMOTION:">
         </input>
         <br></br>
         <button type="submit">Submit</button>

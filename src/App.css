@@ -22,11 +22,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   padding-bottom: 20px;
 }
 
-.App-title {
-  font-size: 4em;
-  color: white;
-}
-
 .card {
   width: 200px;
 }
@@ -35,17 +30,26 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 1.6em;
 }
 
-.form-div{
-  width: 300px;
-  padding: 25px;
-  margin-left: 380px;
+.flatlounge{
+  font-family: cursive;
+  font-size: 4em;
   color: white;
+}
 
-  /* padding-top: 3em;
-  padding-bottom: 2em;
+.form-div{
+  font-family: cursive;
+  width: 300px;
+  padding: 20px;
   color: white;
-  outline: #ffff00 dotted thick;
-  max-height: 200px; */
+  margin-top: 9em;
+}
+
+.search-bar{
+  font-family: cursive;
+  width: 300px;
+  padding: 200px;
+  color: white;
+  padding-bottom: 1px;
 }
 
 #single-card{
@@ -66,4 +70,25 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   grid-gap: 1em;
   margin-left: 150px;
   margin-right: 100px;
+}
+
+#searchNform{
+  display: inline-block;
+}
+
+#searchNform2{
+  display: inline-block;
+}
+
+#NestedBody{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  margin-left: 150px;
+  margin-right: 200px;
+}
+
+.h1 {
+  font-size: 1.8em;
+  color: white;
 }

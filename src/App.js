@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Drinkcards from './Drinkcards'
 import DrinkForm from './DrinkForm'
+import SearchBar from './SearchBar'
 
 class App extends React.Component {
 
@@ -12,7 +13,9 @@ class App extends React.Component {
       nameInput: "",
       descriptionInput: "",
       drinkInput: "",
-      moodInput: ""
+      moodInput: "",
+      filterTerm: ""
+      // sortBy: "All"
     }
   }
 
@@ -38,6 +41,14 @@ class App extends React.Component {
     }
   }
 
+  handleInput = (event) => {
+    this.setState({filterTerm: event.target.value})
+  }
+
+  // handleRadio = (event) => {
+  //   this.setState({sortBy: event.target.value})
+  // }
+
   handleSubmit = (e) => {
     e.preventDefault()
     fetch('http://localhost:3000/drinkcards', {
@@ -57,13 +68,27 @@ class App extends React.Component {
         drinkcards: [...this.state.drinkcards, drinkcard].reverse()
       })
     })
-    this.state.nameInput = ""
-    this.state.descriptionInput = ""
+    this.setState({nameInput: ""})
+    this.setState({descriptionInput: ""})
   }
 
   chooseCards = () => {
-    return this.state.drinkcards
+    if (this.state.filterTerm){
+      return this.state.drinkcards.filter(drinkcard => drinkcard.user.toLowerCase().includes(this.state.filterTerm))
+    } else {
+      return this.state.drinkcards
+    }
   }
+
+  // chooseCards = () => {
+  //   if (this.state.sortBy === "All"){
+  //     return this.state.drinkcards
+  //   } else if (this.state.sortBy !== "All"){
+  //     this.state.drinkcards.filter(drinkcard =>
+  //       drinkcard.beverage.toLowerCase().includes(this.state.sortBy))
+  //   }
+  //
+  // }
 
   chooseName = () => {
     return this.state.nameInput
@@ -93,27 +118,38 @@ class App extends React.Component {
     this.setState({drinkInput: e.target.value})
   }
 
-
-
   render() {
     return (
       <div className="App">
+        <h1 className='flatlounge'>Flat-Lounge</h1>
         <div className="Body">
-          <DrinkForm
-            drinkInput={this.chooseDrink()}
-            moodInput={this.chooseMood()}
-            nameInput={this.chooseName()}
-            descriptionInput={this.state.descriptionInput}
-            handleNameChange={this.handleNameChange}
-            handleDescriptionChange={this.handleDescriptionChange}
-            handleMoodChange={this.handleMoodChange}
-            handleDrinkChange={this.handleDrinkChange}
-            handleSubmit={this.handleSubmit}/>
-          <Drinkcards cards={this.chooseCards()}/>
+          <div id="NestedBody">
+            <div id="searchNform">
+              <DrinkForm
+                drinkInput={this.chooseDrink()}
+                moodInput={this.chooseMood()}
+                nameInput={this.chooseName()}
+                descriptionInput={this.state.descriptionInput}
+                handleNameChange={this.handleNameChange}
+                handleDescriptionChange={this.handleDescriptionChange}
+                handleMoodChange={this.handleMoodChange}
+                handleDrinkChange={this.handleDrinkChange}
+                handleSubmit={this.handleSubmit}/>
+              <br></br>
+              <br></br>
+              </div>
+              <div id="searchNform2">
+                <SearchBar
+                  handleRadio={this.handleRadio}
+                  sortBy={this.state.sortBy}
+                  handleInput={this.handleInput}>
+                </SearchBar>
+              </div>
+            </div>
+            <Drinkcards cards={this.chooseCards()}/>
+          </div>
         </div>
-      </div>
     )
   }
 }
-
 export default App
