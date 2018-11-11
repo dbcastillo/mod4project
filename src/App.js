@@ -69,7 +69,8 @@ class App extends React.Component {
 
   chooseCards = () => {
     if (this.state.filterTerm){
-      return this.state.drinkcards.filter(drinkcard => drinkcard.user.toLowerCase().includes(this.state.filterTerm) ||
+      return this.state.drinkcards.filter(drinkcard =>
+        drinkcard.user.toLowerCase().includes(this.state.filterTerm) ||
       drinkcard.user.includes(this.state.filterTerm))
     } else {
       return this.state.drinkcards
@@ -123,18 +124,18 @@ class App extends React.Component {
                 handleSubmit={this.handleSubmit}/>
               <br></br>
               <br></br>
-              </div>
-              <div id="searchNform2">
-                <SearchBar
-                  handleRadio={this.handleRadio}
-                  sortBy={this.state.sortBy}
-                  handleInput={this.handleInput}>
-                </SearchBar>
-              </div>
             </div>
-            <Drinkcards cards={this.chooseCards()}/>
+            <div id="searchNform2">
+              <SearchBar
+                handleRadio={this.handleRadio}
+                sortBy={this.state.sortBy}
+                handleInput={this.handleInput}>
+              </SearchBar>
+            </div>
           </div>
+          <Drinkcards cards={this.chooseCards()}/>
         </div>
+      </div>
     )
   }
 }

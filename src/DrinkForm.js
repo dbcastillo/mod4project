@@ -27,11 +27,11 @@ class DrinkForm extends React.Component {
         value={this.props.value}
         name="drink"
         id='drink-dropdown'>
-          <option value="Margarita">Margarita</option>
-          <option value="Blue Margarita">Blue Margarita</option>
-          <option value="Tommy's Margarita">Tommys Margarita</option>
-          <option value="Whitecap Margarita">Whitecap Margarita</option>
-          <option value="Strawberry Margarita">Strawberry Margarita</option>
+        <option value="Margarita">Margarita</option>
+        <option value="Blue Margarita">Blue Margarita</option>
+        <option value="Tommy's Margarita">Tommys Margarita</option>
+        <option value="Whitecap Margarita">Whitecap Margarita</option>
+        <option value="Strawberry Margarita">Strawberry Margarita</option>
         </select>
         <select
           name="emotion"
