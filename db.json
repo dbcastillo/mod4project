@@ -45,7 +45,7 @@
       "user": "Marvin",
       "beverage": "Blue Margarita",
       "mood": "So-so",
-      "description": "The material is pretty challenging",
+      "description": "The material is pretty challenging.",
       "image": "https://www.thecocktaildb.com/images/media/drink/qtvvyq1439905913.jpg"
     },
     {
@@ -53,7 +53,7 @@
       "user": "Marlin",
       "beverage": "Blue Margarita",
       "mood": "Frustrated",
-      "description": "I'm struggling with the material",
+      "description": "I'm struggling with the material.",
       "image": "https://www.thecocktaildb.com/images/media/drink/qtvvyq1439905913.jpg"
     },
     {
@@ -154,11 +154,19 @@
     },
     {
       "id": 20,
-      "user": "Mark",
+      "user": "Marsha",
       "beverage": "Strawberry Margarita",
       "mood": "Ecstatic",
       "description": "I love it here and have learned a lot.",
       "image": "https://www.thecocktaildb.com/images/media/drink/tqyrpw1439905311.jpg"
+    },
+    {
+      "user": "Viv",
+      "beverage": "Blue Margarita",
+      "mood": "Determined",
+      "description": "Tryna get this job!!!!!",
+      "image": "https://www.thecocktaildb.com/images/media/drink/qtvvyq1439905913.jpg",
+      "id": 21
     }
   ]
 }

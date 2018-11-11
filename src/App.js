@@ -15,12 +15,11 @@ class App extends React.Component {
       drinkInput: "",
       moodInput: "",
       filterTerm: ""
-      // sortBy: "All"
     }
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/drinkcards')
+    fetch('http://localhost:3001/drinkcards')
     .then(res => res.json())
     .then(drinkcards =>
       this.setState({drinkcards: drinkcards})
@@ -45,13 +44,9 @@ class App extends React.Component {
     this.setState({filterTerm: event.target.value})
   }
 
-  // handleRadio = (event) => {
-  //   this.setState({sortBy: event.target.value})
-  // }
-
   handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:3000/drinkcards', {
+    fetch('http://localhost:3001/drinkcards', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -74,21 +69,12 @@ class App extends React.Component {
 
   chooseCards = () => {
     if (this.state.filterTerm){
-      return this.state.drinkcards.filter(drinkcard => drinkcard.user.toLowerCase().includes(this.state.filterTerm))
+      return this.state.drinkcards.filter(drinkcard => drinkcard.user.toLowerCase().includes(this.state.filterTerm) ||
+      drinkcard.user.includes(this.state.filterTerm))
     } else {
       return this.state.drinkcards
     }
   }
-
-  // chooseCards = () => {
-  //   if (this.state.sortBy === "All"){
-  //     return this.state.drinkcards
-  //   } else if (this.state.sortBy !== "All"){
-  //     this.state.drinkcards.filter(drinkcard =>
-  //       drinkcard.beverage.toLowerCase().includes(this.state.sortBy))
-  //   }
-  //
-  // }
 
   chooseName = () => {
     return this.state.nameInput
